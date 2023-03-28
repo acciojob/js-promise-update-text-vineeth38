@@ -1,8 +1,12 @@
 //your JS code here. If required.
-var promise = new Promise(function(resolve) {
-        setTimeout(function () {
-          console.log("Hello, world!");
-        }, 1000);
-    });
-
-    return promise;
+function sayHello() {
+return new Promise((resolve, reject) => {
+setTimeout(() => {
+resolve('Hello, world!');
+}, 1000);
+});
+}
+const outputElement = document.getElementById('output');
+sayHello().then((message) => {
+outputElement.innerText = message;
+});
